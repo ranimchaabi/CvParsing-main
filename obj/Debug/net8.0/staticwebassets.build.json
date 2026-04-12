@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YznC/ZI1MYBLqwTe/g1xqzz6kYfK5P5SnknX3TLkGoA=",
+  "Hash": "lG+XbVN9ll939NlnIn0uBQgpUhD8a7iKhkaTaJMkKGM=",
   "Source": "CvParsing",
   "BasePath": "_content/CvParsing",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\candidate-profile.css"
+    },
+    {
+      "Identity": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\global-nav-search.css",
+      "SourceId": "CvParsing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\",
+      "BasePath": "_content/CvParsing",
+      "RelativePath": "css/global-nav-search.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\global-nav-search.css"
     },
     {
       "Identity": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\magnific-popup.min.css",
@@ -3171,6 +3190,25 @@
       "OriginalItemSpec": "wwwroot\\js\\form-validator.min.js"
     },
     {
+      "Identity": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\global-nav-search.js",
+      "SourceId": "CvParsing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\",
+      "BasePath": "_content/CvParsing",
+      "RelativePath": "js/global-nav-search.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\global-nav-search.js"
+    },
+    {
       "Identity": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\jquery.ajaxchimp.min.js",
       "SourceId": "CvParsing",
       "SourceType": "Discovered",
@@ -4499,6 +4537,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\profiles\\.gitkeep"
+    },
+    {
+      "Identity": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\profiles\\user-1.jpeg",
+      "SourceId": "CvParsing",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\",
+      "BasePath": "_content/CvParsing",
+      "RelativePath": "uploads/profiles/user-1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\profiles\\user-1.jpeg"
     }
   ]
 }

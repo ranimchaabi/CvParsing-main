@@ -1,15 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using CvParsing.Data;
+using CvParsing.Services;
 
 namespace CvParsing.Controllers;
 
 public class AccountController : Controller
 {
     private readonly AppDbContext _context;
+    private readonly PasswordService _passwordService;
 
-    public AccountController(AppDbContext context)
+    public AccountController(AppDbContext context, PasswordService passwordService)
     {
         _context = context;
+        _passwordService = passwordService;
     }
 
     public IActionResult Login(string? returnUrl = null)
@@ -25,10 +28,9 @@ public class AccountController : Controller
     {
         var user = _context.Utilisateurs
             .FirstOrDefault(u =>
-                (u.nom_utilisateur == username || u.email == username)
-                && u.mot_passe == password);
+                u.nom_utilisateur == username || u.email == username);
 
-        if (user != null)
+        if (user != null && _passwordService.Verify(user.mot_passe, password))
         {
             user.date_derniere_connexion = DateTime.Now;
             _context.SaveChanges();
@@ -69,7 +71,7 @@ public class AccountController : Controller
         {
             nom_utilisateur = username,
             email = email,
-            mot_passe = password,
+            mot_passe = _passwordService.Hash(password),
             date_creation = DateTime.Now
         };
         _context.Utilisateurs.Add(newUser);
@@ -91,29 +93,11 @@ public class AccountController : Controller
         return View();
     }
 
-    // POST: Forgot Password
-    [HttpPost]
-    public IActionResult ForgotPassword(string email)
+    [HttpGet]
+    [Route("/reset-password")]
+    public IActionResult ResetPassword()
     {
-        if (string.IsNullOrEmpty(email))
-        {
-            ViewBag.Error = "Veuillez entrer un email.";
-            return View();
-        }
-
-        var user = _context.Utilisateurs.FirstOrDefault(u => u.email == email);
-
-        if (user != null)
-        {
-            // Simulation envoi email (tu peux remplacer par vrai email plus tard)
-            ViewBag.Success = "Un lien de réinitialisation a été envoyé à votre email.";
-        }
-        else
-        {
-            // message générique (bonne pratique sécurité)
-            ViewBag.Success = "Si cet email existe, un lien a été envoyé.";
-        }
-
+        ViewData["Title"] = "Réinitialiser le mot de passe";
         return View();
     }
 

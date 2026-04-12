@@ -12,6 +12,7 @@ public class AppDbContext : DbContext
     public DbSet<Cv> Cvs { get; set; }
 
     public DbSet<OffreEmploi> OffresEmploi { get; set; }
+    public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -25,5 +26,14 @@ public class AppDbContext : DbContext
             .WithMany()
             .HasForeignKey(c => c.id_candidat)
             .OnDelete(DeleteBehavior.NoAction);
+
+        modelBuilder.Entity<PasswordResetToken>(e =>
+        {
+            e.HasIndex(t => t.TokenHashHex);
+            e.HasOne(t => t.User)
+                .WithMany()
+                .HasForeignKey(t => t.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
     }
 }

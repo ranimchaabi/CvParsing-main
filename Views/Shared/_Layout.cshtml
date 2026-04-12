@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="~/css/responsive.css">
     <link rel="stylesheet" href="~/css/theme-dark.css">
+    <link rel="stylesheet" href="~/css/global-nav-search.css" asp-append-version="true" />
     <title>@ViewData["Title"] - Astree</title>
     <link rel="icon" type="image/png" href="~/images/favicon.png">
     @await RenderSectionAsync("Styles", required: false)
@@ -67,8 +68,29 @@
                             </li>
                         </ul>
 
-                        <!-- Connexion / Déconnexion -->
-                        <div class="navbar-nav ms-3">
+                        <!-- Global search + session -->
+                        <div class="nav-right-cluster ms-lg-3 d-flex flex-column flex-lg-row align-items-lg-center gap-2 w-100 w-lg-auto mt-3 mt-lg-0">
+                            <div class="nav-global-search position-relative" id="globalNavSearchRoot">
+                                <label class="visually-hidden" for="globalNavSearchInput">Recherche</label>
+                                <div class="nav-global-search__field">
+                                    <i class='bx bx-search nav-global-search__icon' aria-hidden="true"></i>
+                                    <input type="search"
+                                           id="globalNavSearchInput"
+                                           class="nav-global-search__input"
+                                           placeholder="Rechercher une page…"
+                                           autocomplete="off"
+                                           spellcheck="false"
+                                           aria-autocomplete="list"
+                                           aria-controls="globalNavSearchList"
+                                           aria-expanded="false" />
+                                </div>
+                                <div class="nav-global-search__panel shadow-sm" id="globalNavSearchPanel" hidden>
+                                    <ul class="nav-global-search__list" id="globalNavSearchList" role="listbox"></ul>
+                                    <div class="nav-global-search__empty" id="globalNavSearchEmpty" hidden>No results found</div>
+                                </div>
+                            </div>
+
+                            <div class="navbar-nav d-flex align-items-center flex-wrap justify-content-lg-end" style="gap:10px;">
                             @if (Context.Session != null && !string.IsNullOrEmpty(Context.Session.GetString("UserId")))
                             {
                                 <div class="nav-item d-flex align-items-center" style="gap:10px;">
@@ -92,6 +114,7 @@
                                     </a>
                                 </div>
                             }
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -170,6 +193,7 @@
     <script src="~/js/form-validator.min.js"></script>
     <script src="~/js/contact-form-script.js"></script>
     <script src="~/js/custom.js"></script>
+    <script src="~/js/global-nav-search.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

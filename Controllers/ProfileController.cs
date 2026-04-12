@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using CvParsing.Data;
 using CvParsing.Models;
 using CvParsing.Models.ViewModels;
+using CvParsing.Services;
 
 namespace CvParsing.Controllers;
 
@@ -10,14 +11,16 @@ public class ProfileController : Controller
 {
     private readonly AppDbContext _context;
     private readonly IWebHostEnvironment _env;
+    private readonly PasswordService _passwordService;
 
     private static readonly string[] AllowedImageExtensions = { ".jpg", ".jpeg", ".png", ".webp" };
     private static readonly string[] AllowedStatuses = { "Accepted", "Rejected", "Pending" };
 
-    public ProfileController(AppDbContext context, IWebHostEnvironment env)
+    public ProfileController(AppDbContext context, IWebHostEnvironment env, PasswordService passwordService)
     {
         _context = context;
         _env = env;
+        _passwordService = passwordService;
     }
 
     public async Task<IActionResult> Index(int page = 1, string? status = null, string? tab = null)
@@ -207,13 +210,13 @@ public class ProfileController : Controller
             return RedirectToAction(nameof(Index), new { tab = "password" });
         }
 
-        if (utilisateur.mot_passe != motDePasseActuel)
+        if (!_passwordService.Verify(utilisateur.mot_passe, motDePasseActuel))
         {
             TempData["PasswordError"] = "Mot de passe actuel incorrect.";
             return RedirectToAction(nameof(Index), new { tab = "password" });
         }
 
-        utilisateur.mot_passe = nouveauMotDePasse;
+        utilisateur.mot_passe = _passwordService.Hash(nouveauMotDePasse);
         await _context.SaveChangesAsync();
         TempData["PasswordSuccess"] = "Mot de passe mis à jour.";
         return RedirectToAction(nameof(Index), new { tab = "password" });

@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\candidate-profile.css"
     },
     {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\global-nav-search.css",
+      "PackagePath": "staticwebassets\\css\\global-nav-search.css"
+    },
+    {
       "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\magnific-popup.min.css",
       "PackagePath": "staticwebassets\\css\\magnific-popup.min.css"
     },
@@ -661,6 +665,10 @@
       "PackagePath": "staticwebassets\\js\\form-validator.min.js"
     },
     {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\global-nav-search.js",
+      "PackagePath": "staticwebassets\\js\\global-nav-search.js"
+    },
+    {
       "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\jquery.ajaxchimp.min.js",
       "PackagePath": "staticwebassets\\js\\jquery.ajaxchimp.min.js"
     },
@@ -939,6 +947,10 @@
     {
       "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\profiles\\.gitkeep",
       "PackagePath": "staticwebassets\\uploads\\profiles\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\profiles\\user-1.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\profiles\\user-1.jpeg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CvParsing.Microsoft.AspNetCore.StaticWebAssets.props",
