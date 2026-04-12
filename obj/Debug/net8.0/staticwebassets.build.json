@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mUGSJfzcLq/uiAIBzxDv1BSk7FRwl7vYcbUK/uohZME=",
+  "Hash": "eJb4ZnaKBkfECCVNvOZpBsDW5kgv7LAGN4ZyuN/YLXk=",
   "Source": "CvParsing",
   "BasePath": "_content/CvParsing",
   "Mode": "Default",
@@ -2466,25 +2466,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logos\\logo-1.png"
-    },
-    {
-      "Identity": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\logos\\logo-2.png",
-      "SourceId": "CvParsing",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\",
-      "BasePath": "_content/CvParsing",
-      "RelativePath": "images/logos/logo-2.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\logos\\logo-2.png"
     },
     {
       "Identity": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\service-details-img1.jpg",

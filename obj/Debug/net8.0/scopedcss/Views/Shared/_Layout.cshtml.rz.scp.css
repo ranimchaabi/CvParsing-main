@@ -46,3 +46,28 @@ button.accept-policy[b-spvsx3f0a5] {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.services-card[b-spvsx3f0a5] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.section-title h2[b-spvsx3f0a5] {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title[b-spvsx3f0a5] {
+    margin-bottom: 40px;
+}
+
+.brand-name[b-spvsx3f0a5] {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
