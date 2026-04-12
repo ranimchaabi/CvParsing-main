@@ -1,0 +1,304 @@
+@model CvParsing.Models.ViewModels.ProfilePageViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Mon profil";
+    var activeTab = (ViewBag.ActiveTab as string ?? "profile").ToLowerInvariant();
+    if (activeTab != "profile" && activeTab != "password" && activeTab != "notifications")
+    {
+        activeTab = "profile";
+    }
+    string StatusQuery(string? s) => s == null ? "all" : s;
+    string BadgeClass(string s) => s switch
+    {
+        "Accepted" => "accepted",
+        "Rejected" => "rejected",
+        _ => "pending"
+    };
+    string BadgeText(string s) => s switch
+    {
+        "Accepted" => "Accepté",
+        "Rejected" => "Refusé",
+        _ => "En attente"
+    };
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/candidate-profile.css" asp-append-version="true" />
+}
+
+<div class="candidate-profile-page">
+    <div class="container py-5">
+        <div class="row g-4 align-items-start">
+            <div class="col-lg-4">
+                <div class="cp-card">
+                    <div class="cp-sidebar-name">@Model.NomComplet</div>
+                    <div class="cp-sidebar-email">@Model.Email</div>
+                    <div class="cp-divider"></div>
+                    <div class="cp-section-title">Informations personnelles</div>
+                    <div class="cp-kv"><strong>Nom complet :</strong> @Model.NomComplet</div>
+                    <div class="cp-kv"><strong>Email :</strong> @Model.Email</div>
+                    <div class="cp-kv"><strong>Téléphone :</strong> @(string.IsNullOrWhiteSpace(Model.Telephone) ? "—" : Model.Telephone)</div>
+                    <div class="cp-kv"><strong>Département :</strong> @(string.IsNullOrWhiteSpace(Model.Departement) ? "—" : Model.Departement)</div>
+                    <div class="cp-kv"><strong>Poste :</strong> @(string.IsNullOrWhiteSpace(Model.Designation) ? "—" : Model.Designation)</div>
+                    <div class="cp-kv"><strong>Langues :</strong> @(string.IsNullOrWhiteSpace(Model.Langues) ? "—" : Model.Langues)</div>
+                    <div class="cp-kv"><strong>Bio :</strong> @(string.IsNullOrWhiteSpace(Model.Bio) ? "—" : Model.Bio)</div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="cp-card">
+                    <div class="cp-tabs" role="tablist">
+                        <a class="cp-tab @(activeTab == "profile" ? "active" : null)"
+                           href="@Url.Action("Index", new { tab = "profile", page = Model.ApplicationsPage, status = StatusQuery(Model.StatusFilter) })">Modifier le profil</a>
+                        <a class="cp-tab @(activeTab == "password" ? "active" : null)"
+                           href="@Url.Action("Index", new { tab = "password", page = Model.ApplicationsPage, status = StatusQuery(Model.StatusFilter) })">Changer le mot de passe</a>
+                        <a class="cp-tab @(activeTab == "notifications" ? "active" : null)"
+                           href="@Url.Action("Index", new { tab = "notifications", page = Model.ApplicationsPage, status = StatusQuery(Model.StatusFilter) })">Notifications</a>
+                    </div>
+
+                    <div class="cp-panel @(activeTab == "profile" ? "active" : null)" id="panel-profile">
+                        @if (TempData["ProfileError"] is string pe && !string.IsNullOrEmpty(pe))
+                        {
+                            <div class="alert alert-danger">@pe</div>
+                        }
+                        @if (TempData["ProfileSuccess"] is string ps && !string.IsNullOrEmpty(ps))
+                        {
+                            <div class="alert alert-success">@ps</div>
+                        }
+
+                        <form asp-controller="Profile" asp-action="UpdateProfile" method="post" enctype="multipart/form-data" class="mt-2">
+                            @Html.AntiForgeryToken()
+                            <div class="cp-subtitle">Photo de profil</div>
+                            <div class="cp-avatar-wrap">
+                                @{
+                                    var defaultAvatar = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect fill='%23f3f4f6' width='120' height='120'/%3E%3Cpath fill='%239ca3af' d='M60 62c12 0 22-10 22-22S72 18 60 18 38 28 38 40s10 22 22 22zm0 8c-15 0-28 7-28 16v6h56v-6c0-9-13-16-28-16z'/%3E%3C/svg%3E";
+                                }
+                                <img src="@(!string.IsNullOrEmpty(Model.PhotoUrl) ? Model.PhotoUrl : defaultAvatar)" alt="" class="cp-avatar" id="profilePreviewImg" />
+                                <label class="cp-avatar-btn" title="Changer la photo">
+                                    <i class='bx bx-camera'></i>
+                                    <input type="file" name="photo" accept="image/*" class="d-none" id="profilePhotoInput" />
+                                </label>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="cp-label">Nom complet <span class="req">*</span></label>
+                                    <input class="cp-input" name="nomComplet" value="@Model.NomComplet" placeholder="Entrez le nom complet" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="cp-label">Email <span class="req">*</span></label>
+                                    <input class="cp-input" type="email" name="email" value="@Model.Email" placeholder="Entrez l'adresse email" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="cp-label">Téléphone <span class="req">*</span></label>
+                                    <input class="cp-input" name="telephone" value="@Model.Telephone" placeholder="Entrez le numéro de téléphone" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="cp-label">Département <span class="req">*</span></label>
+                                    <select class="cp-select" name="departement" required>
+                                        <option value="">Sélectionnez un département</option>
+                                        @foreach (var d in Model.DepartementOptions)
+                                        {
+                                            if (Model.Departement == d)
+                                            {
+                                                <option value="@d" selected>@d</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@d">@d</option>
+                                            }
+                                        }
+                                        @if (!string.IsNullOrEmpty(Model.Departement) && !Model.DepartementOptions.Contains(Model.Departement))
+                                        {
+                                            <option value="@Model.Departement" selected>@Model.Departement (actuel)</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="cp-label">Poste <span class="req">*</span></label>
+                                    <select class="cp-select" name="designation" required>
+                                        <option value="">Sélectionnez un intitulé</option>
+                                        @foreach (var job in Model.DesignationOptions)
+                                        {
+                                            if (Model.Designation == job)
+                                            {
+                                                <option value="@job" selected>@job</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@job">@job</option>
+                                            }
+                                        }
+                                        @if (!string.IsNullOrEmpty(Model.Designation) && !Model.DesignationOptions.Contains(Model.Designation))
+                                        {
+                                            <option value="@Model.Designation" selected>@Model.Designation (actuel)</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="cp-label">Langue <span class="req">*</span></label>
+                                    <select class="cp-select" name="langues" required>
+                                        @{
+                                            var langs = new[] { "Français", "English", "Arabe", "Autre" };
+                                        }
+                                        @foreach (var l in langs)
+                                        {
+                                            if (Model.Langues == l)
+                                            {
+                                                <option value="@l" selected>@l</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@l">@l</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="cp-label">Description <span class="req">*</span></label>
+                                    <textarea class="cp-textarea" name="bio" placeholder="Écrivez une description..." required>@(Model.Bio)</textarea>
+                                </div>
+                            </div>
+
+                            <div class="cp-form-actions">
+                                <a class="cp-btn-cancel" href="@Url.Action("Index", new { tab = "profile" })">Annuler</a>
+                                <button type="submit" class="cp-btn-save">Enregistrer</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="cp-panel @(activeTab == "password" ? "active" : null)" id="panel-password">
+                        @if (TempData["PasswordError"] is string pwe && !string.IsNullOrEmpty(pwe))
+                        {
+                            <div class="alert alert-danger">@pwe</div>
+                        }
+                        @if (TempData["PasswordSuccess"] is string pws && !string.IsNullOrEmpty(pws))
+                        {
+                            <div class="alert alert-success">@pws</div>
+                        }
+                        <form asp-controller="Profile" asp-action="ChangePassword" method="post" class="mt-2">
+                            @Html.AntiForgeryToken()
+                            <div class="mb-3">
+                                <label class="cp-label">Mot de passe actuel</label>
+                                <input class="cp-input" type="password" name="motDePasseActuel" required autocomplete="current-password" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="cp-label">Nouveau mot de passe</label>
+                                <input class="cp-input" type="password" name="nouveauMotDePasse" required autocomplete="new-password" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="cp-label">Confirmation</label>
+                                <input class="cp-input" type="password" name="confirmation" required autocomplete="new-password" />
+                            </div>
+                            <div class="cp-form-actions">
+                                <a class="cp-btn-cancel" href="@Url.Action("Index", new { tab = "password" })">Annuler</a>
+                                <button type="submit" class="cp-btn-save">Mettre à jour</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="cp-panel @(activeTab == "notifications" ? "active" : null)" id="panel-notifications">
+                        <p class="cp-muted-note mb-0">Aucun réglage de notification pour le moment. Les alertes liées à vos candidatures apparaîtront ici lorsqu’elles seront disponibles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="cp-card">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                        <div class="cp-section-title mb-0">Mes candidatures</div>
+                    </div>
+                    <p class="cp-muted-note mb-3">Historique des offres auxquelles vous avez postulé (lié à votre compte).</p>
+
+                    <div class="cp-filters">
+                        @{
+                            var st = Model.StatusFilter;
+                        }
+                        <a class="cp-filter-chip @(st == null ? "active" : null)"
+                           href="@Url.Action("Index", new { tab = activeTab, page = 1, status = "all" })">Toutes</a>
+                        <a class="cp-filter-chip @(st == "Accepted" ? "active" : null)"
+                           href="@Url.Action("Index", new { tab = activeTab, page = 1, status = "Accepted" })">Accepté</a>
+                        <a class="cp-filter-chip @(st == "Rejected" ? "active" : null)"
+                           href="@Url.Action("Index", new { tab = activeTab, page = 1, status = "Rejected" })">Refusé</a>
+                        <a class="cp-filter-chip @(st == "Pending" ? "active" : null)"
+                           href="@Url.Action("Index", new { tab = activeTab, page = 1, status = "Pending" })">En attente</a>
+                    </div>
+
+                    <div class="cp-table-wrap">
+                        <table class="cp-table">
+                            <thead>
+                                <tr>
+                                    <th>Intitulé du poste</th>
+                                    <th>Département</th>
+                                    <th>Date de candidature</th>
+                                    <th>Statut</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.Applications.Count == 0)
+                                {
+                                    <tr>
+                                        <td colspan="5" class="text-center text-muted py-4">Aucune candidature pour ce filtre.</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    foreach (var a in Model.Applications)
+                                    {
+                                        <tr>
+                                            <td>@a.TitrePoste</td>
+                                            <td>@a.DepartementOuEntreprise</td>
+                                            <td>@(a.DateCandidature?.ToString("dd/MM/yyyy HH:mm") ?? "—")</td>
+                                            <td><span class="cp-badge @BadgeClass(a.Statut)">@BadgeText(a.Statut)</span></td>
+                                            <td class="text-end">
+                                                <a class="cp-btn-offer" href="@Url.Action("Details", "Offre", new { id = a.OffreId })">Voir l’offre</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    @if (Model.ApplicationsTotalPages > 1)
+                    {
+                        <div class="cp-pagination">
+                            @if (Model.ApplicationsPage > 1)
+                            {
+                                <a class="cp-page-link" href="@Url.Action("Index", new { tab = activeTab, page = Model.ApplicationsPage - 1, status = StatusQuery(Model.StatusFilter) })">Précédent</a>
+                            }
+                            @for (var p = 1; p <= Model.ApplicationsTotalPages; p++)
+                            {
+                                <a class="cp-page-link @(p == Model.ApplicationsPage ? "active" : null)"
+                                   href="@Url.Action("Index", new { tab = activeTab, page = p, status = StatusQuery(Model.StatusFilter) })">@p</a>
+                            }
+                            @if (Model.ApplicationsPage < Model.ApplicationsTotalPages)
+                            {
+                                <a class="cp-page-link" href="@Url.Action("Index", new { tab = activeTab, page = Model.ApplicationsPage + 1, status = StatusQuery(Model.StatusFilter) })">Suivant</a>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            var input = document.getElementById('profilePhotoInput');
+            var img = document.getElementById('profilePreviewImg');
+            if (!input || !img) return;
+            input.addEventListener('change', function () {
+                var f = input.files && input.files[0];
+                if (!f || !f.type.match(/^image\//)) return;
+                var r = new FileReader();
+                r.onload = function (e) { img.src = e.target.result; };
+                r.readAsDataURL(f);
+            });
+        })();
+    </script>
+}

@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/animate.min.css">
+    <link rel="stylesheet" href="~/fonts/flaticon.css">
+    <link rel="stylesheet" href="~/css/boxicons.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="~/css/nice-select.min.css">
+    <link rel="stylesheet" href="~/css/meanmenu.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="~/css/theme-dark.css">
+    <title>@ViewData["Title"] - Astree</title>
+    <link rel="icon" type="image/png" href="~/images/favicon.png">
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <!-- Pre Loader -->
+    <div class="preloader">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area">
+        <div class="mobile-nav">
+            <a href="/Home/Index" class="logo">
+                <img src="~/images/logos/logo-1.png" class="logo-one" alt="Logo">
+                <img src="~/images/logos/logo-2.png" class="logo-two" alt="Logo">
+            </a>
+        </div>
+
+        <div class="main-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="/Home/Index">
+                        <img src="~/images/logos/logo-1.png" class="logo-one" alt="Logo">
+                        <img src="~/images/logos/logo-2.png" class="logo-two" alt="Logo">
+                    </a>
+
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="/Home/Index" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Offre/Index" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Offre" ? "active" : "")">
+                                    Offre
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+
+                        <!-- Connexion / Déconnexion -->
+                        <div class="navbar-nav ms-3">
+                            @if (Context.Session != null && !string.IsNullOrEmpty(Context.Session.GetString("UserId")))
+                            {
+                                <div class="nav-item d-flex align-items-center" style="gap:10px;">
+                                    <a href="/Profile" class="nav-link" style="color:#333; font-weight:600;">
+                                        <i class='bx bx-user-circle'></i>
+                                        @Context.Session.GetString("UserName")
+                                    </a>
+                                    <a href="/Account/Logout" class="default-btn btn-bg-two" style="padding:8px 20px; font-size:14px;">
+                                        <i class='bx bx-log-out'></i> Déconnexion
+                                    </a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="nav-item d-flex align-items-center" style="gap:8px;">
+                                    <a href="/Account/Login" class="default-btn btn-bg-two" style="padding:8px 20px; font-size:14px;">
+                                        <i class='bx bx-log-in'></i> Connexion
+                                    </a>
+                                    <a href="/Account/Register" class="default-btn btn-bg-one" style="padding:8px 20px; font-size:14px;">
+                                        <i class='bx bx-user-plus'></i> S'inscrire
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+
+    @RenderBody()
+
+    <!-- Footer Area -->
+    <footer class="footer-area footer-bg">
+        <div class="container">
+            <div class="footer-top pt-100 pb-70">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="/Home/Index">
+                                    <img src="~/images/logos/footer-logo.png" alt="Images">
+                                </a>
+                            </div>
+                            <p>
+                                Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auct.
+                                Aenean, lorem quis bibendum auct. Aenean sollicitudin lorem.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6">
+                        <div class="footer-widget pl-2">
+                            <h3>Services</h3>
+                            <ul class="footer-list">
+                                <li><a href="#">IT Consultancy</a></li>
+                                <li><a href="#">Business Solution</a></li>
+                                <li><a href="#">Digital Services</a></li>
+                                <li><a href="#">Business Reform</a></li>
+                                <li><a href="#">Web Development</a></li>
+                                <li><a href="#">Cloud Computing</a></li>
+                                <li><a href="#">Data Analysis</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget pl-2">
+                            <h3>Liens rapides</h3>
+                            <ul class="footer-list">
+                                <li><a href="/Home/Index">Accueil</a></li>
+                                <li><a href="/Offre/Index">Offres</a></li>
+                                <li><a href="/Account/Login">Connexion</a></li>
+                                <li><a href="/Account/Register">Inscription</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="footer-copy-right">
+                            <p>&copy; @DateTime.Now.Year Astree. Tous droits réservés.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/meanmenu.js"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/form-validator.min.js"></script>
+    <script src="~/js/contact-form-script.js"></script>
+    <script src="~/js/custom.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,66 @@
+@model List<CvParsing.Models.OffreEmploi>
+
+@{
+    ViewData["Title"] = "Offres";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Inner Banner -->
+<div class="inner-banner">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h3>Offres d'emploi</h3>
+            <ul>
+                <li><a href="/Home/Index">Home</a></li>
+                <li><i class='bx bx-chevrons-right'></i></li>
+                <li>Offre</li>
+            </ul>
+        </div>
+    </div>
+    <div class="inner-shape">
+        <img src="~/images/shape/inner-shape.png" alt="Images">
+    </div>
+</div>
+<!-- Inner Banner End -->
+
+<!-- Case Study Area -->
+<div class="case-study-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>Introduce Our Projects and Check Recent Work</h2>
+        </div>
+
+        <div class="row pt-45">
+            <div class="col-lg-4 col-md-6">
+                  @foreach(var item in Model)
+{
+    <div class="blog-card">
+        <div class="blog-img">
+            <a href="/Offre/Details/@item.id">
+                <img src="~/images/blog/blog-img1.jpg" alt="Blog Images">
+            </a>
+
+            <div class="blog-tag">
+                <h3>@item.date_creation?.Year</h3>
+            </div>
+        </div>
+
+        <div class="content">
+            <h3>
+                <a href="/Offre/Details/@item.id">
+                    @item.titre
+                </a>
+            </h3>
+
+            <a href="/Offre/Details/@item.id" class="read-btn">
+                Read More
+            </a>
+        </div>
+    </div>
+}
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Case Study Area End -->

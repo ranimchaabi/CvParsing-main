@@ -1,0 +1,961 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CvParsing.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CvParsing.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\css\\animate.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\boxicons.min.css",
+      "PackagePath": "staticwebassets\\css\\boxicons.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\candidate-profile.css",
+      "PackagePath": "staticwebassets\\css\\candidate-profile.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\magnific-popup.min.css",
+      "PackagePath": "staticwebassets\\css\\magnific-popup.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\meanmenu.css",
+      "PackagePath": "staticwebassets\\css\\meanmenu.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\nice-select.min.css",
+      "PackagePath": "staticwebassets\\css\\nice-select.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\owl.video.play.html",
+      "PackagePath": "staticwebassets\\css\\owl.video.play.html"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\theme-dark.css",
+      "PackagePath": "staticwebassets\\css\\theme-dark.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.eot"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.svg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.ttf"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.woff"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\Flaticon.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\Flaticond41d.eot",
+      "PackagePath": "staticwebassets\\fonts\\Flaticond41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\boxicons.eot",
+      "PackagePath": "staticwebassets\\fonts\\boxicons.eot"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\boxicons.ttf",
+      "PackagePath": "staticwebassets\\fonts\\boxicons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\boxicons.woff",
+      "PackagePath": "staticwebassets\\fonts\\boxicons.woff"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\boxicons.woff2",
+      "PackagePath": "staticwebassets\\fonts\\boxicons.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\boxiconsd41d.svg",
+      "PackagePath": "staticwebassets\\fonts\\boxiconsd41d.svg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\fonts\\flaticon.css",
+      "PackagePath": "staticwebassets\\fonts\\flaticon.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\404-error.jpg",
+      "PackagePath": "staticwebassets\\images\\404-error.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\about\\about-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\about\\about-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\about\\about-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\about\\about-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\about\\about-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\about\\about-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\about\\about-img4.png",
+      "PackagePath": "staticwebassets\\images\\about\\about-img4.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\about\\about-img5.png",
+      "PackagePath": "staticwebassets\\images\\about\\about-img5.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-details.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img-footer.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img-footer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img-footer2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img-footer2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img-footer3.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img-footer3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img10.png",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img10.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img11.png",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img11.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img12.png",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img12.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img13.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img14.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img15.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img4.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img5.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img6.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img7.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img8.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-img9.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-img9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-profile1.png",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-profile1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-profile2.png",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-profile2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-profile3.png",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-profile3.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-small-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-small-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-small-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-small-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-small-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-small-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-small-img4.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-small-img4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-small-img5.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-small-img5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-small-img6.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-small-img6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-style-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-style-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-style-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-style-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-style-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-style-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\blog\\blog-style-img4.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-style-img4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-bg.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-logo1.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-logo1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-logo2.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-logo2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-logo3.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-logo3.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-logo4.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-logo4.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-logo5.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-logo5.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-style1.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-style1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-style2.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-style2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-style3.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-style3.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-style4.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-style4.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\brand-logo\\brand-style5.png",
+      "PackagePath": "staticwebassets\\images\\brand-logo\\brand-style5.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build-img.jpg",
+      "PackagePath": "staticwebassets\\images\\build-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build\\build-bg.png",
+      "PackagePath": "staticwebassets\\images\\build\\build-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build\\build-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\build\\build-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build\\build-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\build\\build-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build\\build-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\build\\build-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build\\build-img4.jpg",
+      "PackagePath": "staticwebassets\\images\\build\\build-img4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build\\build-img5.jpg",
+      "PackagePath": "staticwebassets\\images\\build\\build-img5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build\\build-img6.jpg",
+      "PackagePath": "staticwebassets\\images\\build\\build-img6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\build\\build-play-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\build\\build-play-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\call-us\\call-shap1.png",
+      "PackagePath": "staticwebassets\\images\\call-us\\call-shap1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\call-us\\call-shap2.png",
+      "PackagePath": "staticwebassets\\images\\call-us\\call-shap2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\call-us\\call-shap3.png",
+      "PackagePath": "staticwebassets\\images\\call-us\\call-shap3.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\call-us\\call-us-img1.png",
+      "PackagePath": "staticwebassets\\images\\call-us\\call-us-img1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\call-us\\call-us-img2.png",
+      "PackagePath": "staticwebassets\\images\\call-us\\call-us-img2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-details.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study1.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study2.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study3.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study4.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study5.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study6.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study7.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study8.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\case-study\\case-study9.jpg",
+      "PackagePath": "staticwebassets\\images\\case-study\\case-study9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\choose-img.jpg",
+      "PackagePath": "staticwebassets\\images\\choose-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\choose-img\\choose-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\choose-img\\choose-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\clients-img\\client-bg.png",
+      "PackagePath": "staticwebassets\\images\\clients-img\\client-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\clients-img\\client-user-img1.png",
+      "PackagePath": "staticwebassets\\images\\clients-img\\client-user-img1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\clients-img\\client-user-img2.png",
+      "PackagePath": "staticwebassets\\images\\clients-img\\client-user-img2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\clients-img\\clients-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\clients-img\\clients-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\clients-img\\clients-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\clients-img\\clients-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\clients-img\\clients-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\clients-img\\clients-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\dental.mp4",
+      "PackagePath": "staticwebassets\\images\\dental.mp4"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\images\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-five-img.png",
+      "PackagePath": "staticwebassets\\images\\home-five-img.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-four\\home-four-bg.png",
+      "PackagePath": "staticwebassets\\images\\home-four\\home-four-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-four\\home-four-img.png",
+      "PackagePath": "staticwebassets\\images\\home-four\\home-four-img.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-one\\home-one-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\home-one\\home-one-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-one\\home-one-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\home-one\\home-one-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-one\\home-one-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\home-one\\home-one-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-six.jpg",
+      "PackagePath": "staticwebassets\\images\\home-six.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-three\\home-three-bg.png",
+      "PackagePath": "staticwebassets\\images\\home-three\\home-three-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-three\\home-three-img.png",
+      "PackagePath": "staticwebassets\\images\\home-three\\home-three-img.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-three\\home-three-shape.png",
+      "PackagePath": "staticwebassets\\images\\home-three\\home-three-shape.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-three\\home-three-sub1.jpg",
+      "PackagePath": "staticwebassets\\images\\home-three\\home-three-sub1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-three\\home-three-sub2.jpg",
+      "PackagePath": "staticwebassets\\images\\home-three\\home-three-sub2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-three\\home-three-sub3.jpg",
+      "PackagePath": "staticwebassets\\images\\home-three\\home-three-sub3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\home-two.jpg",
+      "PackagePath": "staticwebassets\\images\\home-two.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\logos\\footer-logo.png",
+      "PackagePath": "staticwebassets\\images\\logos\\footer-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\logos\\logo-1.png",
+      "PackagePath": "staticwebassets\\images\\logos\\logo-1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\logos\\logo-2.png",
+      "PackagePath": "staticwebassets\\images\\logos\\logo-2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\service-details-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\service-details-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\service-details-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\service-details-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\service-details.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\service-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-bg.png",
+      "PackagePath": "staticwebassets\\images\\services\\services-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img4.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img5.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img6.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img7.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img8.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\services\\services-img9.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\services-img9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\bg-shape.png",
+      "PackagePath": "staticwebassets\\images\\shape\\bg-shape.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\bg-shape2.png",
+      "PackagePath": "staticwebassets\\images\\shape\\bg-shape2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\bg-shape3.png",
+      "PackagePath": "staticwebassets\\images\\shape\\bg-shape3.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\bg-shape5.png",
+      "PackagePath": "staticwebassets\\images\\shape\\bg-shape5.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\inner-shape.png",
+      "PackagePath": "staticwebassets\\images\\shape\\inner-shape.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\service-shape1.png",
+      "PackagePath": "staticwebassets\\images\\shape\\service-shape1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\shape1.png",
+      "PackagePath": "staticwebassets\\images\\shape\\shape1.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\shape2.png",
+      "PackagePath": "staticwebassets\\images\\shape\\shape2.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\shape\\shape4.png",
+      "PackagePath": "staticwebassets\\images\\shape\\shape4.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\talk-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\talk-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\talk-bg2.jpg",
+      "PackagePath": "staticwebassets\\images\\talk-bg2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\team\\team-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\team\\team-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\team\\team-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-img3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\team\\team-img4.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-img4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\team\\team-img5.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-img5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\team\\team-img6.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-img6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\technology-img.jpg",
+      "PackagePath": "staticwebassets\\images\\technology-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\technology-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\technology-img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\terms-condition-img.jpg",
+      "PackagePath": "staticwebassets\\images\\terms-condition-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\images\\user-img.png",
+      "PackagePath": "staticwebassets\\images\\user-img.png"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\contact-form-script.js",
+      "PackagePath": "staticwebassets\\js\\contact-form-script.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\custom.js",
+      "PackagePath": "staticwebassets\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\form-validator.min.js",
+      "PackagePath": "staticwebassets\\js\\form-validator.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\jquery.ajaxchimp.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.ajaxchimp.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\jquery.nice-select.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.nice-select.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\meanmenu.js",
+      "PackagePath": "staticwebassets\\js\\meanmenu.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\js\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\cvs\\ac93aca1-e40e-47cc-9509-3cb0e97c4057.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cvs\\ac93aca1-e40e-47cc-9509-3cb0e97c4057.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\cvs\\daec7b00-784b-47fa-b449-b3a66aea1eb9.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cvs\\daec7b00-784b-47fa-b449-b3a66aea1eb9.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\profiles\\.gitkeep",
+      "PackagePath": "staticwebassets\\uploads\\profiles\\.gitkeep"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CvParsing.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CvParsing.props",
+      "PackagePath": "build\\CvParsing.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CvParsing.props",
+      "PackagePath": "buildMultiTargeting\\CvParsing.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CvParsing.props",
+      "PackagePath": "buildTransitive\\CvParsing.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

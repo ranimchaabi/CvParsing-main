@@ -1,0 +1,141 @@
+@model CvParsing.Models.OffreEmploi
+
+@{
+    ViewData["Title"] = "Détail Offre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Inner Banner -->
+<div class="inner-banner">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h3>Détail Offre</h3>
+            <ul>
+                <li><a href="/Offre/Index">Offre</a></li>
+                <li><i class='bx bx-chevrons-right'></i></li>
+                <li>Détail</li>
+            </ul>
+        </div>
+    </div>
+    <div class="inner-shape">
+        <img src="~/images/shape/inner-shape.png" alt="Images">
+    </div>
+</div>
+<!-- Inner Banner End -->
+
+<!-- Case Details Area -->
+<div class="case-details-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="case-article">
+                    <div class="case-article-content">
+                        <h2>@(Model?.titre ?? "")</h2>
+                        <p>@(Model?.description ?? "")</p>
+                    </div>
+
+                    <!-- ========== SECTION POSTULER / UPLOAD CV ========== -->
+                    <div class="case-article-content mt-4">
+                        <h3>Postuler à cette offre</h3>
+
+                        @if (ViewBag.IsLoggedIn == true)
+                        {
+                            @if (ViewBag.UploadSuccess == true)
+                            {
+                                <div class="alert alert-success" role="alert">
+                                    <i class='bx bx-check-circle'></i>
+                                    Votre CV a été soumis avec succès ! Nous vous contacterons prochainement.
+                                </div>
+                            }
+
+                            @if (!string.IsNullOrEmpty(ViewBag.UploadError as string))
+                            {
+                                <div class="alert alert-danger" role="alert">
+                                    <i class='bx bx-error-circle'></i>
+                                    @ViewBag.UploadError
+                                </div>
+                            }
+
+                            <div class="apply-form-area" style="background:#f9f9f9; border:1px solid #e0e0e0; border-radius:8px; padding:30px; margin-top:20px;">
+                                <form asp-action="UploadCv" asp-controller="Offre" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="offreId" value="@Model?.id" />
+                                    <div class="form-group mb-3">
+                                        <label style="font-weight:600; margin-bottom:8px; display:block;">
+                                            <i class='bx bx-upload'></i> Télécharger votre CV
+                                        </label>
+                                        <div style="border:2px dashed #ccc; border-radius:8px; padding:20px; text-align:center; background:#fff;">
+                                            <i class='bx bx-file' style="font-size:40px; color:#aaa;"></i>
+                                            <p style="color:#888; margin:10px 0 5px;">Glissez votre fichier ici ou cliquez pour parcourir</p>
+                                            <small style="color:#aaa;">Formats acceptés : PDF, DOC, DOCX (max 5 MB)</small>
+                                            <br><br>
+                                            <input type="file" name="cvFile" id="cvFile"
+                                                   accept=".pdf,.doc,.docx"
+                                                   required
+                                                   style="display:none;"
+                                                   onchange="document.getElementById('fileName').textContent = this.files[0]?.name || ''">
+                                            <label for="cvFile" class="default-btn btn-bg-two" style="cursor:pointer; display:inline-block; padding:10px 25px;">
+                                                Parcourir
+                                            </label>
+                                            <p id="fileName" style="margin-top:10px; color:#333; font-weight:600;"></p>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="default-btn btn-bg-two" style="margin-top:10px;">
+                                        <i class='bx bx-send'></i> Envoyer ma candidature
+                                    </button>
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:30px; text-align:center; margin-top:20px;">
+                                <i class='bx bx-lock-alt' style="font-size:50px; color:#ffc107;"></i>
+                                <h4 style="margin:15px 0 10px;">Connexion requise</h4>
+                                <p style="color:#666; margin-bottom:20px;">
+                                    Vous devez être connecté pour postuler à cette offre et télécharger votre CV.
+                                </p>
+                                <a href="/Account/Login?returnUrl=/Offre/Details/@ViewData["OffreId"]"
+                                   class="default-btn btn-bg-two" style="margin-right:10px;">
+                                    <i class='bx bx-log-in'></i> Se connecter
+                                </a>
+                                <a href="/Account/Register" class="default-btn btn-bg-one">
+                                    <i class='bx bx-user-plus'></i> S'inscrire
+                                </a>
+                            </div>
+                        }
+                    </div>
+                    <!-- ========== FIN SECTION POSTULER ========== -->
+
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="side-bar-area">
+                    <div class="side-bar-widget">
+                        <h3 class="title">Recent Project</h3>
+                        <div class="side-bar-categories">
+                            <ul>
+                                <li>
+                                    <div class="line-circle"></div>
+                                    <a href="/Offre/Details/@Model?.id">@Model?.titre</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="side-bar-widget">
+                        <div class="side-bar-categories">
+                            <ul>
+                                <li>@Model?.type</li>
+                                <li>@Model?.experience ans</li>
+                                <li>@Model?.niveau_education</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Case Details Area End -->
