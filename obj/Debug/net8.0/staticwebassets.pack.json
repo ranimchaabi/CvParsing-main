@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\css\\theme-dark.css"
     },
     {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\css\\ux-overrides.css",
+      "PackagePath": "staticwebassets\\css\\ux-overrides.css"
+    },
+    {
       "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -693,6 +697,10 @@
       "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
     },
     {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\password-toggle.js",
+      "PackagePath": "staticwebassets\\js\\password-toggle.js"
+    },
+    {
       "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\js\\wow.min.js",
       "PackagePath": "staticwebassets\\js\\wow.min.js"
     },
@@ -935,6 +943,14 @@
     {
       "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\cvs\\00a7586a-89e8-4f09-ab0b-59eb3f8491de.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cvs\\00a7586a-89e8-4f09-ab0b-59eb3f8491de.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\cvs\\9cc5b4f0-7fae-43c8-a42e-a452702aba67.docx",
+      "PackagePath": "staticwebassets\\uploads\\cvs\\9cc5b4f0-7fae-43c8-a42e-a452702aba67.docx"
     },
     {
       "Id": "C:\\Users\\ranim\\Downloads\\CvParsing-main\\wwwroot\\uploads\\cvs\\ac93aca1-e40e-47cc-9509-3cb0e97c4057.pdf",

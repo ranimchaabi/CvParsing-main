@@ -5,23 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!-- Inner Banner -->
-<div class="inner-banner">
+<div class="page-strip">
     <div class="container">
-        <div class="inner-title text-center">
-            <h3>Détail Offre</h3>
-            <ul>
-                <li><a href="/Offre/Index">Offre</a></li>
-                <li><i class='bx bx-chevrons-right'></i></li>
-                <li>Détail</li>
-            </ul>
-        </div>
-    </div>
-    <div class="inner-shape">
-        <img src="~/images/shape/inner-shape.png" alt="Images">
+        <nav class="page-strip__nav" aria-label="Fil d'Ariane">
+            <a href="/Home/Index">Home</a><span class="page-strip__sep">›</span><a href="/Offre/Index">Offre</a><span class="page-strip__sep">›</span><span class="page-strip__current">Détail</span>
+        </nav>
     </div>
 </div>
-<!-- Inner Banner End -->
 
 <!-- Case Details Area -->
 <div class="case-details-area pt-100 pb-70">

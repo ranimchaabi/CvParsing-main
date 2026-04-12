@@ -1,0 +1,91 @@
+/* Scoped UX overrides — header buttons + minimal page strip (no global theme rewrite) */
+
+/* --- 2. Header navbar buttons only (border-radius + blue button hover = white text) --- */
+.navbar-area .main-nav .navbar .default-btn {
+  border-radius: 8px;
+}
+
+.navbar-area .main-nav .navbar .default-btn.btn-bg-two:hover,
+.navbar-area .main-nav .navbar .default-btn.btn-bg-two:focus-visible {
+  color: #ffffff !important;
+}
+
+.navbar-area .main-nav .navbar .default-btn.btn-bg-two:hover i,
+.navbar-area .main-nav .navbar .default-btn.btn-bg-two:focus-visible i {
+  color: #ffffff !important;
+}
+
+/* --- 3. Minimal page indicator (replaces removed inner-banner) --- */
+.page-strip {
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.page-strip .container {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.page-strip__nav {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.page-strip__nav a {
+  color: #0071dc;
+  text-decoration: none;
+}
+
+.page-strip__nav a:hover {
+  text-decoration: underline;
+}
+
+.page-strip__sep {
+  margin: 0 8px;
+  color: #b0b0b0;
+}
+
+.page-strip__current {
+  color: #333333;
+  font-weight: 600;
+}
+
+/* --- 1. Password visibility toggle (wrap is injected by password-toggle.js) --- */
+.password-toggle-wrap {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.password-toggle-wrap > input[type="password"],
+.password-toggle-wrap > input[type="text"] {
+  width: 100%;
+  padding-right: 2.75rem;
+}
+
+.password-toggle-wrap .password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px 6px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.password-toggle-wrap .password-toggle-btn:hover,
+.password-toggle-wrap .password-toggle-btn:focus-visible {
+  color: #333333;
+  outline: none;
+}
+
+.password-toggle-wrap .password-toggle-btn i {
+  font-size: 1.15rem;
+  display: inline-block;
+  vertical-align: middle;
+}

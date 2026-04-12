@@ -3,23 +3,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!-- Inner Banner -->
-<div class="inner-banner">
+<div class="page-strip">
     <div class="container">
-        <div class="inner-title text-center">
-            <h3>Connexion</h3>
-            <ul>
-                <li><a href="/Home/Index">Accueil</a></li>
-                <li><i class='bx bx-chevrons-right'></i></li>
-                <li>Connexion</li>
-            </ul>
-        </div>
-    </div>
-    <div class="inner-shape">
-        <img src="~/images/shape/inner-shape.png" alt="Images">
+        <nav class="page-strip__nav" aria-label="Fil d'Ariane">
+            <a href="/Home/Index">Accueil</a><span class="page-strip__sep">›</span><span class="page-strip__current">Connexion</span>
+        </nav>
     </div>
 </div>
-<!-- Inner Banner End -->
 
 <!-- User Area -->
 <div class="user-area pt-100 pb-70">
