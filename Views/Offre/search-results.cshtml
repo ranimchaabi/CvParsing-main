@@ -1,0 +1,97 @@
+@model CvParsing.ViewModels.OffreSearchResultsViewModel
+
+@{
+    ViewData["Title"] = "Résultats de recherche";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-strip">
+    <div class="container">
+        <nav class="page-strip__nav" aria-label="Breadcrumb">
+            <a href="/Home/Index">Home</a><span class="page-strip__sep">›</span><a href="/Offre/Index">Offres d'emploi</a><span class="page-strip__sep">›</span><span class="page-strip__current">Recherche</span>
+        </nav>
+    </div>
+</div>
+
+<div class="case-study-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>Résultats de recherche</h2>
+            <p class="margin-auto" style="max-width: 820px;">
+                @if (!string.IsNullOrWhiteSpace(Model?.Query))
+                {
+                    <span>Mot-clé : <strong>@Model.Query</strong></span>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model?.Departement))
+                {
+                    <span> &nbsp;|&nbsp; Département : <strong>@Model.Departement</strong></span>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model?.TypeContrat))
+                {
+                    <span> &nbsp;|&nbsp; Type : <strong>@Model.TypeContrat</strong></span>
+                }
+            </p>
+        </div>
+
+        <div class="row pt-45">
+            @if (Model?.Results == null || Model.Results.Count == 0)
+            {
+                <div class="col-12">
+                    <div class="alert alert-info" role="alert">
+                        Aucune offre ne correspond à votre recherche.
+                    </div>
+                </div>
+            }
+            else
+            {
+                @foreach (var item in Model.Results)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="blog-card h-100">
+                            <div class="blog-img">
+                                <a href="/Offre/Details/@item.id">
+                                    <img src="~/images/blog/blog-img1.jpg" alt="Offre">
+                                </a>
+                                <div class="blog-tag">
+                                    <h3>@(item.date_creation?.Year)</h3>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <h3>
+                                    <a href="/Offre/Details/@item.id">@item.titre</a>
+                                </h3>
+
+                                <p style="margin: 10px 0 14px; color:#6b7280;">
+                                    @{
+                                        var desc = (item.description ?? "").Trim();
+                                        var shortDesc = desc.Length > 140 ? desc.Substring(0, 140) + "…" : desc;
+                                    }
+                                    @shortDesc
+                                </p>
+
+                                <ul style="padding-left: 0; margin: 0 0 14px; list-style: none; display:flex; flex-wrap:wrap; gap:10px; color:#333;">
+                                    @if (!string.IsNullOrWhiteSpace(item.departement))
+                                    {
+                                        <li style="background:#f3f4f6; border:1px solid #e5e7eb; border-radius:999px; padding:6px 10px; font-size:12px;">
+                                            <i class="bx bx-map" aria-hidden="true"></i> @item.departement
+                                        </li>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(item.type))
+                                    {
+                                        <li style="background:#f3f4f6; border:1px solid #e5e7eb; border-radius:999px; padding:6px 10px; font-size:12px;">
+                                            <i class="bx bx-briefcase" aria-hidden="true"></i> @item.type
+                                        </li>
+                                    }
+                                </ul>
+
+                                <a href="/Offre/Details/@item.id" class="read-btn">Voir l'offre</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+

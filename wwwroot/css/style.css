@@ -6003,3 +6003,31 @@ Home Page Six Css End
     border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
   }
 }/*# sourceMappingURL=style.css.map */
+
+
+.services-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.section-title h2 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    margin-bottom: 40px;
+}
+
+.brand-name {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+.navbar-brand {
+    margin-left: -40px;
+}

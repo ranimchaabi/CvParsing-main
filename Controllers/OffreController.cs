@@ -1,6 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using CvParsing.Data;
 using CvParsing.Models;
+using CvParsing.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using System.Text;
 
 namespace CvParsing.Controllers;
 
@@ -36,6 +41,57 @@ public class OffreController : Controller
         ViewBag.EmailUtilisateur = HttpContext.Session.GetString("UserEmail");
 
         return View("~/Views/Offre/offer-details.cshtml", offre);
+    }
+
+    [HttpGet]
+    public IActionResult Search(string? q, string? departement, string? typeContrat)
+    {
+        var all = _context.OffresEmploi.AsNoTracking().ToList();
+
+        var vm = new OffreSearchResultsViewModel
+        {
+            Query = q,
+            Departement = departement,
+            TypeContrat = typeContrat,
+            Departements = all
+                .Select(o => (o.departement ?? "").Trim())
+                .Where(d => !string.IsNullOrWhiteSpace(d))
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(d => d)
+                .Select(d => new SelectListItem { Value = d, Text = d, Selected = string.Equals(d, departement, StringComparison.OrdinalIgnoreCase) })
+                .ToList(),
+            TypesContrat = all
+                .Select(o => (o.type ?? "").Trim())
+                .Where(t => !string.IsNullOrWhiteSpace(t))
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(t => t)
+                .Select(t => new SelectListItem { Value = t, Text = t, Selected = string.Equals(t, typeContrat, StringComparison.OrdinalIgnoreCase) })
+                .ToList()
+        };
+
+        IEnumerable<OffreEmploi> filtered = all;
+
+        if (!string.IsNullOrWhiteSpace(departement))
+        {
+            filtered = filtered.Where(o => string.Equals((o.departement ?? "").Trim(), departement.Trim(), StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (!string.IsNullOrWhiteSpace(typeContrat))
+        {
+            filtered = filtered.Where(o => string.Equals((o.type ?? "").Trim(), typeContrat.Trim(), StringComparison.OrdinalIgnoreCase));
+        }
+
+        var query = (q ?? "").Trim();
+        if (!string.IsNullOrWhiteSpace(query))
+        {
+            filtered = filtered.Where(o => IsFuzzyMatch(query, (o.titre ?? "") + " " + (o.description ?? "")));
+        }
+
+        vm.Results = filtered
+            .OrderByDescending(o => o.date_creation ?? DateTime.MinValue)
+            .ToList();
+
+        return View("~/Views/Offre/search-results.cshtml", vm);
     }
 
     [HttpPost]
@@ -96,5 +152,93 @@ public class OffreController : Controller
         ViewBag.NomUtilisateur = nomComplet;
         ViewBag.EmailUtilisateur = email;
         return View("~/Views/Offre/offer-details.cshtml", offre);
+    }
+
+    private static bool IsFuzzyMatch(string needle, string haystack)
+    {
+        var n = NormalizeForSearch(needle);
+        if (string.IsNullOrWhiteSpace(n)) return true;
+
+        var h = NormalizeForSearch(haystack);
+        if (string.IsNullOrWhiteSpace(h)) return false;
+
+        if (h.Contains(n, StringComparison.Ordinal)) return true;
+
+        var words = h.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        var maxDist = n.Length <= 4 ? 1 : (n.Length <= 7 ? 2 : 3);
+
+        foreach (var w in words)
+        {
+            if (w.StartsWith(n, StringComparison.Ordinal)) return true;
+
+            // quick length guard for performance
+            if (Math.Abs(w.Length - n.Length) > maxDist) continue;
+
+            if (LevenshteinDistance(n, w, maxDist) <= maxDist) return true;
+        }
+
+        return false;
+    }
+
+    private static string NormalizeForSearch(string input)
+    {
+        if (string.IsNullOrWhiteSpace(input)) return "";
+
+        var s = input.Trim().ToLowerInvariant().Normalize(NormalizationForm.FormD);
+        var sb = new System.Text.StringBuilder(s.Length);
+        foreach (var ch in s)
+        {
+            var cat = CharUnicodeInfo.GetUnicodeCategory(ch);
+            if (cat == UnicodeCategory.NonSpacingMark) continue;
+
+            if (char.IsLetterOrDigit(ch))
+            {
+                sb.Append(ch);
+            }
+            else if (char.IsWhiteSpace(ch) || ch == '-' || ch == '_' || ch == '/')
+            {
+                sb.Append(' ');
+            }
+        }
+
+        return string.Join(' ', sb.ToString().Split(' ', StringSplitOptions.RemoveEmptyEntries));
+    }
+
+    // Bounded Levenshtein: early-exits when distance exceeds max
+    private static int LevenshteinDistance(string a, string b, int max)
+    {
+        if (a.Length == 0) return b.Length;
+        if (b.Length == 0) return a.Length;
+
+        if (Math.Abs(a.Length - b.Length) > max) return max + 1;
+
+        var prev = new int[b.Length + 1];
+        var curr = new int[b.Length + 1];
+
+        for (var j = 0; j <= b.Length; j++) prev[j] = j;
+
+        for (var i = 1; i <= a.Length; i++)
+        {
+            curr[0] = i;
+            var bestInRow = curr[0];
+            var ca = a[i - 1];
+
+            for (var j = 1; j <= b.Length; j++)
+            {
+                var cost = (ca == b[j - 1]) ? 0 : 1;
+                var val = Math.Min(
+                    Math.Min(curr[j - 1] + 1, prev[j] + 1),
+                    prev[j - 1] + cost
+                );
+                curr[j] = val;
+                if (val < bestInRow) bestInRow = val;
+            }
+
+            if (bestInRow > max) return max + 1;
+
+            (prev, curr) = (curr, prev);
+        }
+
+        return prev[b.Length];
     }
 }
