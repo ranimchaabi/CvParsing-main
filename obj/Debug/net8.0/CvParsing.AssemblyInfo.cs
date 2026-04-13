@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CvParsing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+089e048ea9f3a56e8b5e79e06631a8252d89eef1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f125fe2c6350ed66f69690a971312a541208ae57")]
 [assembly: System.Reflection.AssemblyProductAttribute("CvParsing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CvParsing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

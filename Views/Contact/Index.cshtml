@@ -1,0 +1,93 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Contact";
+}
+
+<div class="page-strip">
+    <div class="container">
+        <nav class="page-strip__nav" aria-label="Breadcrumb">
+            <a href="/Home/Index">Accueil</a><span class="page-strip__sep">›</span><span class="page-strip__current">Contact</span>
+        </nav>
+    </div>
+</div>
+
+<section class="contact-premium pt-100 pb-70">
+    <div class="container">
+        <div class="contact-premium__hero">
+            <h3 class="contact-premium__hero-title">Connectez avec nous</h3>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-4">
+                <div class="contact-premium__info">
+                    
+                    <h2  style="color: white;">Nous sommes là pour vous</h2>
+                    <p class="contact-premium__desc">Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.</p>
+
+                    <div class="contact-premium__item">
+                        <div class="contact-premium__icon"><i class="bx bx-phone-call"></i></div>
+                        <div>
+                            <div class="contact-premium__k">Téléphone</div>
+                            <div class="contact-premium__v">(+216) 71 90 42 11</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-premium__item">
+                        <div class="contact-premium__icon"><i class="bx bx-map"></i></div>
+                        <div>
+                            <div class="contact-premium__k">Adresse</div>
+                            <div class="contact-premium__v">45, Avenue Khaireddine Pacha, B.P. 780 TUNIS Cedex</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-premium__item">
+                        <div class="contact-premium__icon"><i class="bx bx-envelope"></i></div>
+                        <div>
+                            <div class="contact-premium__k">Email</div>
+                            <div class="contact-premium__v"><a href="mailto:courrier@astree.com.tn">courrier@astree.com.tn</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="contact-premium__card">
+                    @if (TempData["ContactError"] is string ce && !string.IsNullOrWhiteSpace(ce))
+                    {
+                        <div class="alert alert-danger">@ce</div>
+                    }
+                    @if (TempData["ContactSuccess"] is string cs && !string.IsNullOrWhiteSpace(cs))
+                    {
+                        <div class="alert alert-success">@cs</div>
+                    }
+
+                    <form method="post" action="/Contact" class="contact-premium__form">
+                        @Html.AntiForgeryToken()
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="contact-premium__label2">Nom <span class="req">*</span></label>
+                                <input class="contact-premium__input" name="name" placeholder="Votre nom" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="contact-premium__label2">Email <span class="req">*</span></label>
+                                <input class="contact-premium__input" type="email" name="email" placeholder="Votre email" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="contact-premium__label2">Sujet <span class="req">*</span></label>
+                                <input class="contact-premium__input" name="subject" placeholder="Sujet" required />
+                            </div>
+                            <div class="col-12">
+                                <label class="contact-premium__label2">Message <span class="req">*</span></label>
+                                <textarea class="contact-premium__textarea" name="message" rows="8" placeholder="Votre message" required></textarea>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <button type="submit" class="contact-premium__btn">Envoyer le message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

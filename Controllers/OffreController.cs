@@ -40,6 +40,16 @@ public class OffreController : Controller
         ViewBag.NomUtilisateur = HttpContext.Session.GetString("UserName");
         ViewBag.EmailUtilisateur = HttpContext.Session.GetString("UserEmail");
 
+        if (!string.IsNullOrEmpty(userId) && int.TryParse(userId, out var uid))
+        {
+            var existing = _context.Cvs.AsNoTracking().FirstOrDefault(c => c.id_candidat == uid && c.id_offre == id);
+            ViewBag.HasCvSubmitted = existing != null;
+        }
+        else
+        {
+            ViewBag.HasCvSubmitted = false;
+        }
+
         return View("~/Views/Offre/offer-details.cshtml", offre);
     }
 
@@ -116,10 +126,10 @@ public class OffreController : Controller
             return View("~/Views/Offre/offer-details.cshtml", offre);
         }
 
-        var ext = Path.GetExtension(cvFile.FileName).ToLower();
-        if (ext != ".pdf" && ext != ".doc" && ext != ".docx")
+        var ext = Path.GetExtension(cvFile.FileName).ToLowerInvariant();
+        if (ext != ".pdf" && ext != ".jpg" && ext != ".jpeg" && ext != ".png")
         {
-            ViewBag.UploadError = "Format non accepté. Utilisez PDF, DOC ou DOCX.";
+            ViewBag.UploadError = "Format non accepté. Utilisez PDF, JPG, JPEG ou PNG.";
             ViewBag.IsLoggedIn = true;
             ViewBag.NomUtilisateur = nomComplet;
             ViewBag.EmailUtilisateur = email;
@@ -131,6 +141,24 @@ public class OffreController : Controller
         var uniqueFileName = $"{Guid.NewGuid()}{ext}";
         var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
+        var uid = int.Parse(userId);
+        var previous = _context.Cvs.FirstOrDefault(c => c.id_candidat == uid && c.id_offre == offreId);
+        if (previous != null)
+        {
+            if (!string.IsNullOrWhiteSpace(previous.chemin_fichier))
+            {
+                var rel = previous.chemin_fichier.TrimStart('~').TrimStart('/').Replace('/', Path.DirectorySeparatorChar);
+                var physical = Path.Combine(_env.WebRootPath, rel);
+                if (System.IO.File.Exists(physical))
+                {
+                    try { System.IO.File.Delete(physical); } catch { /* ignore */ }
+                }
+            }
+
+            _context.Cvs.Remove(previous);
+            await _context.SaveChangesAsync();
+        }
+
         using (var stream = new FileStream(filePath, FileMode.Create))
         {
             await cvFile.CopyToAsync(stream);
@@ -139,7 +167,7 @@ public class OffreController : Controller
         var newCv = new Cv
         {
             id_offre = offreId,
-            id_candidat = int.Parse(userId),
+            id_candidat = uid,
             chemin_fichier = $"/uploads/cvs/{uniqueFileName}",
             upload_date = DateTime.Now,
             statut_candidature = "Pending"
@@ -147,11 +175,8 @@ public class OffreController : Controller
         _context.Cvs.Add(newCv);
         await _context.SaveChangesAsync();
 
-        ViewBag.UploadSuccess = true;
-        ViewBag.IsLoggedIn = true;
-        ViewBag.NomUtilisateur = nomComplet;
-        ViewBag.EmailUtilisateur = email;
-        return View("~/Views/Offre/offer-details.cshtml", offre);
+        TempData["CvSubmitted"] = "1";
+        return RedirectToAction(nameof(Details), new { id = offreId });
     }
 
     private static bool IsFuzzyMatch(string needle, string haystack)

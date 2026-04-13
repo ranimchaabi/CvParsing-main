@@ -51,27 +51,26 @@
                     </a>
 
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                        <ul class="navbar-nav m-auto">
+                        <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
                                 <a href="/Home/Index" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">
-                                    Home
+                                    Accueil
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">About</a>
+                                <a href="/Contact" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Contact" ? "active" : "")">
+                                    Contact
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/Offre/Index" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Offre" ? "active" : "")">
                                     Offre
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Contact</a>
-                            </li>
                         </ul>
 
                         <!-- Global search + session -->
-                        <div class="nav-right-cluster ms-lg-3 d-flex flex-column flex-lg-row align-items-lg-center gap-2 w-100 w-lg-auto mt-3 mt-lg-0">
+                        <div class="nav-right-cluster ms-auto d-flex flex-column flex-lg-row align-items-lg-center gap-2 w-lg-auto mt-3 mt-lg-0">
                             <div class="nav-global-search position-relative" id="globalNavSearchRoot">
                                 <label class="visually-hidden" for="globalNavSearchInput">Recherche</label>
                                 <div class="nav-global-search__field">
@@ -88,34 +87,26 @@
                                 </div>
                                 <div class="nav-global-search__panel shadow-sm" id="globalNavSearchPanel" hidden>
                                     <ul class="nav-global-search__list" id="globalNavSearchList" role="listbox"></ul>
-                                    <div class="nav-global-search__empty" id="globalNavSearchEmpty" hidden>No results found</div>
+                                    <div class="nav-global-search__empty" id="globalNavSearchEmpty" hidden>Aucun résultat</div>
                                 </div>
                             </div>
 
                             <div class="navbar-nav d-flex align-items-center flex-wrap justify-content-lg-end" style="gap:10px;">
-                            @if (Context.Session != null && !string.IsNullOrEmpty(Context.Session.GetString("UserId")))
-                            {
-                                <div class="nav-item d-flex align-items-center" style="gap:10px;">
-                                    <a href="/Profile" class="nav-link" style="color:#333; font-weight:600;">
-                                        <i class='bx bx-user-circle'></i>
-                                        @Context.Session.GetString("UserName")
-                                    </a>
-                                    <a href="/Account/Logout" class="default-btn btn-bg-two" style="padding:8px 20px; font-size:14px;">
-                                        <i class='bx bx-log-out'></i> Déconnexion
-                                    </a>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="nav-item d-flex align-items-center" style="gap:8px;">
-                                    <a href="/Account/Login" class="default-btn btn-bg-two" style="padding:8px 20px; font-size:14px;">
-                                        <i class='bx bx-log-in'></i> Connexion
-                                    </a>
-                                    <a href="/Account/Register" class="default-btn btn-bg-one" style="padding:8px 20px; font-size:14px;">
-                                        <i class='bx bx-user-plus'></i> S'inscrire
-                                    </a>
-                                </div>
-                            }
+                                @if (Context.Session != null && !string.IsNullOrEmpty(Context.Session.GetString("UserId")))
+                                {
+                                    @await Component.InvokeAsync("UserNav")
+                                }
+                                else
+                                {
+                                    <div class="nav-item d-flex align-items-center" style="gap:8px;">
+                                        <a href="/Account/Login" class="default-btn btn-bg-two" style="padding:8px 20px; font-size:14px;">
+                                            <i class='bx bx-log-in'></i> Connexion
+                                        </a>
+                                        <a href="/Account/Register" class="default-btn btn-bg-one" style="padding:8px 20px; font-size:14px;">
+                                            <i class='bx bx-user-plus'></i> S'inscrire
+                                        </a>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -124,6 +115,25 @@
         </div>
     </div>
     <!-- End Navbar Area -->
+
+    <!-- Logout confirmation modal -->
+    <div class="modal fade" id="logoutConfirmModal" tabindex="-1" aria-labelledby="logoutConfirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutConfirmModalLabel">Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Êtes-vous sûr de vouloir vous déconnecter ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" href="/Account/Logout">Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     @RenderBody()
 
@@ -140,22 +150,19 @@
                                 </a>
                             </div>
                             <p>
-                                Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auct.
-                                Aenean, lorem quis bibendum auct. Aenean sollicitudin lorem.
+                                ASTREE est une compagnie d’assurances multibranches créée en 1949. Elle fête ses 76 ans en 2025.
+,société anonyme cotée en bourse au capital de 30MD. 
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-sm-6">
+                    <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget pl-2">
-                            <h3>Services</h3>
+                            <h3>Domaines</h3>
                             <ul class="footer-list">
-                                <li><a href="#">IT Consultancy</a></li>
-                                <li><a href="#">Business Solution</a></li>
-                                <li><a href="#">Digital Services</a></li>
-                                <li><a href="#">Business Reform</a></li>
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Cloud Computing</a></li>
-                                <li><a href="#">Data Analysis</a></li>
+                                <li><a href="#">Support et gestion</a></li>
+                                <li><a href="#">Technique et assurances</a></li>
+                                <li><a href="#">Systèmes d'information et digital</a></li>
+                                <li><a href="#">Commercial et développement</a></li>
                             </ul>
                         </div>
                     </div>
@@ -167,8 +174,21 @@
                                 <li><a href="/Offre/Index">Offres</a></li>
                                 <li><a href="/Account/Login">Connexion</a></li>
                                 <li><a href="/Account/Register">Inscription</a></li>
+
                             </ul>
                         </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6">
+                        <div class="footer-widget pl-2">
+                            <h3>Contact</h3>
+                            <ul class="footer-list">
+                                <li><a href="#">45, Avenue Khaireddine Pacha, B.P. 780 TUNIS Cedex</a></li>
+                                <li><a href="tel:+21671904211">(+216) 71 90 42 11</a></li>
+                                <li><a href="mailto:courrier@astree.com.tn">courrier@astree.com.tn</a></li>
+                                <li><a href="https://www.astree.com.tn/fr" target="_blank" rel="noopener">https://www.astree.com.tn/fr</a></li>
+                            </ul>
+   
+                     </div>
                     </div>
                 </div>
             </div>
@@ -197,6 +217,7 @@
     <script src="~/js/custom.js"></script>
     <script src="~/js/global-nav-search.js" asp-append-version="true"></script>
     <script src="~/js/password-toggle.js" asp-append-version="true"></script>
+    <script src="~/js/user-nav.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

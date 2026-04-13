@@ -1,0 +1,86 @@
+@model CvParsing.Models.ViewModels.ProfilePageViewModel
+@{
+    string StatusQuery(string? s) => s == null ? "all" : s;
+    string BadgeClass(string s) => s switch
+    {
+        "Accepted" => "accepted",
+        "Rejected" => "rejected",
+        _ => "pending"
+    };
+    string BadgeText(string s) => s switch
+    {
+        "Accepted" => "Accepté",
+        "Rejected" => "Refusé",
+        _ => "En attente"
+    };
+    var activeTab = (ViewBag.ActiveTab as string ?? "profile").ToLowerInvariant();
+    var st = Model.StatusFilter;
+}
+
+<div class="cp-filters">
+    <a class="cp-filter-chip @(st == null ? "active" : null)"
+       href="@Url.Action("Index", "Profile", new { tab = activeTab, page = 1, status = "all" })">Toutes</a>
+    <a class="cp-filter-chip @(st == "Accepted" ? "active" : null)"
+       href="@Url.Action("Index", "Profile", new { tab = activeTab, page = 1, status = "Accepted" })">Accepté</a>
+    <a class="cp-filter-chip @(st == "Rejected" ? "active" : null)"
+       href="@Url.Action("Index", "Profile", new { tab = activeTab, page = 1, status = "Rejected" })">Refusé</a>
+    <a class="cp-filter-chip @(st == "Pending" ? "active" : null)"
+       href="@Url.Action("Index", "Profile", new { tab = activeTab, page = 1, status = "Pending" })">En attente</a>
+</div>
+
+<div class="cp-table-wrap">
+    <table class="cp-table">
+        <thead>
+            <tr>
+                <th>Intitulé du poste</th>
+                <th>Département</th>
+                <th>Date de candidature</th>
+                <th>Statut</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Applications.Count == 0)
+            {
+                <tr>
+                    <td colspan="5" class="text-center text-muted py-4">Aucune candidature pour ce filtre.</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var a in Model.Applications)
+                {
+                    <tr>
+                        <td>@a.TitrePoste</td>
+                        <td>@a.DepartementOuEntreprise</td>
+                        <td>@(a.DateCandidature?.ToString("dd/MM/yyyy HH:mm") ?? "—")</td>
+                        <td><span class="cp-badge @BadgeClass(a.Statut)">@BadgeText(a.Statut)</span></td>
+                        <td class="text-end">
+                            <a class="cp-btn-offer" href="@Url.Action("Details", "Offre", new { id = a.OffreId })">Voir l’offre</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (Model.ApplicationsTotalPages > 1)
+{
+    <div class="cp-pagination">
+        @if (Model.ApplicationsPage > 1)
+        {
+            <a class="cp-page-link" href="@Url.Action("Index", "Profile", new { tab = activeTab, page = Model.ApplicationsPage - 1, status = StatusQuery(Model.StatusFilter) })">Précédent</a>
+        }
+        @for (var p = 1; p <= Model.ApplicationsTotalPages; p++)
+        {
+            <a class="cp-page-link @(p == Model.ApplicationsPage ? "active" : null)"
+               href="@Url.Action("Index", "Profile", new { tab = activeTab, page = p, status = StatusQuery(Model.StatusFilter) })">@p</a>
+        }
+        @if (Model.ApplicationsPage < Model.ApplicationsTotalPages)
+        {
+            <a class="cp-page-link" href="@Url.Action("Index", "Profile", new { tab = activeTab, page = Model.ApplicationsPage + 1, status = StatusQuery(Model.StatusFilter) })">Suivant</a>
+        }
+    </div>
+}
+

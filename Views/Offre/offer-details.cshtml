@@ -8,7 +8,7 @@
 <div class="page-strip">
     <div class="container">
         <nav class="page-strip__nav" aria-label="Fil d'Ariane">
-            <a href="/Home/Index">Home</a><span class="page-strip__sep">›</span><a href="/Offre/Index">Offre</a><span class="page-strip__sep">›</span><span class="page-strip__current">Détail</span>
+            <a href="/Home/Index">Accueil</a><span class="page-strip__sep">›</span><a href="/Offre/Index">Offres</a><span class="page-strip__sep">›</span><span class="page-strip__current">Détail</span>
         </nav>
     </div>
 </div>
@@ -30,11 +30,19 @@
 
                         @if (ViewBag.IsLoggedIn == true)
                         {
+                            var hasSubmitted = ViewBag.HasCvSubmitted == true;
                             @if (ViewBag.UploadSuccess == true)
                             {
                                 <div class="alert alert-success" role="alert">
                                     <i class='bx bx-check-circle'></i>
                                     Votre CV a été soumis avec succès ! Nous vous contacterons prochainement.
+                                </div>
+                            }
+                            @if (TempData["CvSubmitted"] as string == "1" || hasSubmitted)
+                            {
+                                <div class="alert alert-success" role="alert">
+                                    <i class='bx bx-check-circle'></i>
+                                    CV soumis avec succès
                                 </div>
                             }
 
@@ -46,7 +54,16 @@
                                 </div>
                             }
 
-                            <div class="apply-form-area" style="background:#f9f9f9; border:1px solid #e0e0e0; border-radius:8px; padding:30px; margin-top:20px;">
+                            <div class="d-flex flex-wrap align-items-center gap-2" style="margin-top:14px;">
+                                @if (hasSubmitted)
+                                {
+                                    <button type="button" class="default-btn btn-bg-two" id="resendCvToggleBtn">
+                                        Modifier &amp; renvoyer le CV
+                                    </button>
+                                }
+                            </div>
+
+                            <div class="apply-form-area" id="applyCvFormWrap" style="background:#f9f9f9; border:1px solid #e0e0e0; border-radius:8px; padding:30px; margin-top:20px; @(hasSubmitted ? "display:none;" : "")">
                                 <form asp-action="UploadCv" asp-controller="Offre" method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="offreId" value="@Model?.id" />
                                     <div class="form-group mb-3">
@@ -56,10 +73,10 @@
                                         <div style="border:2px dashed #ccc; border-radius:8px; padding:20px; text-align:center; background:#fff;">
                                             <i class='bx bx-file' style="font-size:40px; color:#aaa;"></i>
                                             <p style="color:#888; margin:10px 0 5px;">Glissez votre fichier ici ou cliquez pour parcourir</p>
-                                            <small style="color:#aaa;">Formats acceptés : PDF, DOC, DOCX (max 5 MB)</small>
+                                            <small style="color:#aaa;">Formats acceptés : PDF, JPG, JPEG, PNG (max 5 MB)</small>
                                             <br><br>
                                             <input type="file" name="cvFile" id="cvFile"
-                                                   accept=".pdf,.doc,.docx"
+                                                   accept=".pdf,.jpg,.jpeg,.png"
                                                    required
                                                    style="display:none;"
                                                    onchange="document.getElementById('fileName').textContent = this.files[0]?.name || ''">
@@ -88,7 +105,7 @@
                                    class="default-btn btn-bg-two" style="margin-right:10px;">
                                     <i class='bx bx-log-in'></i> Se connecter
                                 </a>
-                                <a href="/Account/Register" class="default-btn btn-bg-one">
+                                <a href="/Account/Register?returnUrl=/Offre/Details/@ViewData["OffreId"]" class="default-btn btn-bg-one">
                                     <i class='bx bx-user-plus'></i> S'inscrire
                                 </a>
                             </div>
@@ -102,7 +119,7 @@
             <div class="col-lg-4">
                 <div class="side-bar-area">
                     <div class="side-bar-widget">
-                        <h3 class="title">Recent Project</h3>
+                        <h3 class="title">Offre récente</h3>
                         <div class="side-bar-categories">
                             <ul>
                                 <li>
@@ -129,3 +146,17 @@
     </div>
 </div>
 <!-- Case Details Area End -->
+
+@section Scripts {
+    <script>
+        (function () {
+            var toggle = document.getElementById('resendCvToggleBtn');
+            var wrap = document.getElementById('applyCvFormWrap');
+            if (!toggle || !wrap) return;
+            toggle.addEventListener('click', function () {
+                wrap.style.display = 'block';
+                toggle.style.display = 'none';
+            });
+        })();
+    </script>
+}

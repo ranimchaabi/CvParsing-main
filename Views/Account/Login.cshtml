@@ -24,8 +24,19 @@
             <div class="col-lg-6">
                 <div class="user-form">
                     <div class="contact-form">
-                        <h2>Log In</h2>
-                        <form asp-action="Login" asp-controller="Account" method="post">
+                        <h2>Connexion</h2>
+
+                        @if (!string.IsNullOrWhiteSpace(ViewBag.PasswordError as string))
+                        {
+                            <div class="alert alert-danger">@ViewBag.PasswordError</div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(ViewBag.Error as string))
+                        {
+                            <div class="alert alert-danger">@ViewBag.Error</div>
+                        }
+
+                        <form asp-action="Login" asp-controller="Account" method="post" novalidate>
+                            <input type="hidden" name="returnUrl" value="@(ViewBag.ReturnUrl ?? "")" />
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -37,7 +48,10 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <input type="password" name="password" class="form-control"
-                                               placeholder="Mot de passe">
+                                               required placeholder="Mot de passe">
+                                        <small class="text-danger d-block mt-2" id="pwdInlineError" style="display:none;">
+                                            Veuillez entrer le mot de passe
+                                        </small>
                                     </div>
                                 </div>
 
@@ -60,7 +74,7 @@
                                 <div class="col-12">
                                     <p class="account-desc">
                                         Pas encore membre ?
-                                        <a href="/Account/Register">S'inscrire</a>
+                                        <a href="/Account/Register?returnUrl=@(ViewBag.ReturnUrl ?? "")">S'inscrire</a>
                                     </p>
                                 </div>
                             </div>
@@ -72,3 +86,26 @@
     </div>
 </div>
 <!-- User Area End -->
+
+@section Scripts {
+    <script>
+        (function () {
+            var form = document.querySelector('form[asp-action="Login"], form[action*="Login"]');
+            if (!form) return;
+            var pwd = form.querySelector('input[name="password"]');
+            var err = document.getElementById('pwdInlineError');
+            if (!pwd || !err) return;
+
+            form.addEventListener('submit', function (e) {
+                var v = (pwd.value || '').trim();
+                if (!v) {
+                    e.preventDefault();
+                    err.style.display = 'block';
+                    pwd.focus();
+                } else {
+                    err.style.display = 'none';
+                }
+            });
+        })();
+    </script>
+}

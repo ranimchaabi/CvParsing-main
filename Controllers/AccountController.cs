@@ -26,6 +26,13 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult Login(string username, string password, string? returnUrl = null)
     {
+        if (string.IsNullOrWhiteSpace(password))
+        {
+            ViewBag.PasswordError = "Veuillez entrer le mot de passe";
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
         var user = _context.Utilisateurs
             .FirstOrDefault(u =>
                 u.nom_utilisateur == username || u.email == username);
@@ -50,20 +57,26 @@ public class AccountController : Controller
         return View();
     }
 
-    public IActionResult Register() => View();
+    public IActionResult Register(string? returnUrl = null)
+    {
+        ViewBag.ReturnUrl = returnUrl;
+        return View();
+    }
 
     [HttpPost]
-    public IActionResult Register(string username, string email, string password)
+    public IActionResult Register(string username, string email, string password, string? returnUrl = null)
     {
         if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
         {
             ViewBag.Error = "Veuillez remplir tous les champs.";
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
         if (_context.Utilisateurs.Any(u => u.email == email))
         {
             ViewBag.Error = "Cet email est déjà utilisé.";
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -84,6 +97,9 @@ public class AccountController : Controller
         HttpContext.Session.SetString("UserId", newUser.id.ToString());
         HttpContext.Session.SetString("UserName", username);
         HttpContext.Session.SetString("UserEmail", email);
+
+        if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+            return Redirect(returnUrl);
 
         return RedirectToAction("Index", "Home");
     }

@@ -71,3 +71,7 @@ button.accept-policy {
     color: #333;
 }
 
+.signup,
+.logout {
+  transition: color 0.03s ease, background-color 0.03s ease;
+}

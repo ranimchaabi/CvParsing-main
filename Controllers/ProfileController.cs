@@ -105,6 +105,56 @@ public class ProfileController : Controller
         return View(vm);
     }
 
+    [HttpGet]
+    public async Task<IActionResult> ApplicationsPartial(int page = 1, string? status = null, string? tab = null)
+    {
+        var userIdStr = HttpContext.Session.GetString("UserId");
+        if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out var userId))
+            return Unauthorized();
+
+        const int pageSize = 8;
+        page = page < 1 ? 1 : page;
+
+        var statusNorm = NormalizeStatusFilter(status);
+
+        var appsQuery = _context.Cvs
+            .AsNoTracking()
+            .Include(c => c.OffreEmploi)
+            .Where(c => c.id_candidat == userId);
+
+        if (!string.IsNullOrEmpty(statusNorm))
+            appsQuery = appsQuery.Where(c => (c.statut_candidature ?? "Pending") == statusNorm);
+
+        var totalApps = await appsQuery.CountAsync();
+        var cvs = await appsQuery
+            .OrderByDescending(c => c.upload_date)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        var applications = cvs.Select(c => new ApplicationRowViewModel
+        {
+            CvId = c.id,
+            OffreId = c.id_offre ?? 0,
+            TitrePoste = c.OffreEmploi?.titre ?? "—",
+            DepartementOuEntreprise = c.OffreEmploi?.departement ?? "—",
+            DateCandidature = c.upload_date,
+            Statut = string.IsNullOrEmpty(c.statut_candidature) ? "Pending" : c.statut_candidature!
+        }).ToList();
+
+        var vm = new ProfilePageViewModel
+        {
+            Applications = applications,
+            ApplicationsTotal = totalApps,
+            ApplicationsPage = page,
+            ApplicationsPageSize = pageSize,
+            StatusFilter = statusNorm
+        };
+
+        ViewBag.ActiveTab = string.IsNullOrWhiteSpace(tab) ? "profile" : tab.Trim().ToLowerInvariant();
+        return PartialView("~/Views/Profile/_ApplicationsTable.cshtml", vm);
+    }
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> UpdateProfile(

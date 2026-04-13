@@ -71,3 +71,7 @@ button.accept-policy[b-spvsx3f0a5] {
     color: #333;
 }
 
+.signup[b-spvsx3f0a5],
+.logout[b-spvsx3f0a5] {
+  transition: color 0.03s ease, background-color 0.03s ease;
+}
